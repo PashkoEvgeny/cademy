@@ -4,10 +4,12 @@ public class Proba {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-System.out.println("ads122");
-System.out.println("ads12122");
-int a=5;
-System.out.println(a);
+System.out.println("summa pokupok v magazine:");
+System.out.println("vozrast pokupatelja:");
+
+System.out.println("itogo c uchetom skidki:");
+
+
 	}
 
 }
