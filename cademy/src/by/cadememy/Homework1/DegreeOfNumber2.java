@@ -1,7 +1,5 @@
 package by.cadememy.Homework1;
 
-import java.util.Scanner;
-
 public class DegreeOfNumber2 {
 
 	public static void main(String[] args) {
