@@ -41,7 +41,7 @@ if (summa>=400) {
 	itogo=summa-summa*20/100;
 	}
 		
-		System.out.print("itogo c uchetom skidki:" + itogo);
+		System.out.print("itogo c uchetom skidki:%" + itogo);
 
 	}
 }
