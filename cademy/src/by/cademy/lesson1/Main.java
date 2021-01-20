@@ -3,9 +3,23 @@ package by.cademy.lesson1;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-System.out.println("23redfgd");
-System.out.println("izmenenie na gite super GOOD");
+		
+		int n =2;
+		
+		switch (n) {
+			case 1:
+			System.out.println("Понедельник");
+			break;
+	  
+			case 2:
+			System.out.println("Вторник");
+			break;
+	
+			case 3:
+			System.out.println("Среда");
+			break;
+			
+		}
+	}
 	}
 
-}
