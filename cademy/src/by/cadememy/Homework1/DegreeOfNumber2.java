@@ -7,7 +7,7 @@ public class DegreeOfNumber2 {
 		
 		int i=0;
 		
-		while (Math.pow(2,i)<=100) {
+		while (Math.pow(2,i)<=1_000_000) {
 			System.out.println("2 v stepeni "+i+" = "+Math.pow(2,i));
 			i=i+1;
 		}	

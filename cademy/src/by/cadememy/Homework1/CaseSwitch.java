@@ -9,11 +9,10 @@ public class CaseSwitch {
 	//		a) если тип данных int, вывести остаток от деления на 2
 	//		b) если double, вывести 70% от числа 
 
-int n =1;
-		
-		switch (n) {
-			case 1:
-			System.out.println("Понедельник");
+int a;		
+		switch (a) {
+			case :
+			System.out.println(a%2);
 			break;
 		}
 	}
