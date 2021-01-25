@@ -3,20 +3,15 @@ package by.cadememy.Homework1;
 public class CaseSwitch {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-	//	»спользуем switch/case. ¬вести с консоли тип данных(созран€ем в String) и переменную, вывести на экран:
-	//		a) если тип данных int, вывести остаток от делени€ на 2
-	//		b) если double, вывести 70% от числа 
-
-int a;		
-		switch (a) {
-			case :
-			System.out.println(a%2);
-			break;
+		for (int i = 1; i < 5; i++) {
+			if (i == 3) {
+				System.out.println("continue!");
+				continue;
+			}
+			System.out.println("i = " + i);
 		}
-	}
-		
+
 	}
 
-
+}
