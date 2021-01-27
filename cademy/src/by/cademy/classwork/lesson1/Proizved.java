@@ -4,35 +4,27 @@ public class Proizved {
 
 	public static void main(String[] args) {
 
+		int nor = 1;
 
-				long n=   1;
-				
-				for (int i =0;i<30; i++) {
-					if (i%13==0) {
-						n=n*i;
-					}
-					
-				}
-				
-				System.out.println("Result: " + n);
-				
-				*/
-				
-				/*
-				long result = 1;
-
-				for (int i = 11; i < 100; i += 2) {
-					if (i % 13 == 0) {
-						result = result * i;
-					}
-				}
-
-				System.out.println("Result: " + result);
-				*/
+		for (int i = 13; i < 100; i +=26) {
+			if (i % 13 == 0) {
+				nor = nor * i;
 			}
 
-}
+		}
 
-}
+		System.out.println("Result: " + nor);
+
+		int result = 1;
+
+		for (int p = 11; p < 100; p += 2) {
+			if (p % 13 == 0) {
+				result = result * p;
+			}
+		}
+
+		System.out.println("Result: " + result);
+
+	}
 
 }
