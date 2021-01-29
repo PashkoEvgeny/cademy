@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Task1 {
 
 	public static void main(String[] args) {
-		
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter 2 lines:");
@@ -17,18 +16,14 @@ public class Task1 {
 		StringBuffer str22 = new StringBuffer(str2);
 
 		if (str1.length() == str2.length()) {
-
 			for (int i = 0; i < str1.length(); i++) {
 				for (int q = 0; q < str11.length(); q++) {
 					if (str11.charAt(0) == str22.charAt(q)) {
 						str11 = str11.deleteCharAt(0);
 						str22 = str22.deleteCharAt(q);
-						System.out.println(str11);
-						System.out.println(str22);
 					}
 				}
 			}
-
 		}
 		
 		if (str11.length()==0) {
@@ -38,8 +33,5 @@ public class Task1 {
 		else {
 			System.out.println("false");
 		}
-		
-		
-
 	}
 }

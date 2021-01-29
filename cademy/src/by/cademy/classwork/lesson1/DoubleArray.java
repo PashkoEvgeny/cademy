@@ -1,6 +1,5 @@
 package by.cademy.classwork.lesson1;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class DoubleArray {
