@@ -11,11 +11,9 @@ public class Task1 {
 		String str1 = sc.nextLine();
 		String str2 = sc.nextLine();
 		sc.close();
-		
-// метод deleteCharAt работает просто в ring. Удалить StringBuffer
-		
+
 		StringBuffer str11 = new StringBuffer(str1);
-		StringBuffer str22 = new StringBuffer(str2); 
+		StringBuffer str22 = new StringBuffer(str2);
 
 		if (str1.length() == str2.length()) {
 			for (int i = 0; i < str1.length(); i++) {
@@ -27,12 +25,11 @@ public class Task1 {
 				}
 			}
 		}
-		
-		if (str11.length()==0) {
+
+		if (str11.length() == 0) {
 			System.out.println("true");
-			
-		}
-		else {
+
+		} else {
 			System.out.println("false");
 		}
 	}
