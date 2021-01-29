@@ -24,26 +24,37 @@ public class Task2 {
 		sc.nextLine();
 		for (int i=0; i<array.length; i++) {
 			array[i]=sc.nextLine();
-		
 		}
 		
-		System.out.println(Arrays.toString(array));
-		System.out.println(array.length);
+		int[] numbs=new int[n];
 		
-		array[0]=Arrays.sort(array[0]);
 		
-		String[] array2=new Arrays.sort(array);
+		String word1 = ("qre1wtqwerq1ty");
+		System.out.println(word1);
+		StringBuffer word11 = new StringBuffer(word1);
+
 		
-		System.out.println(Arrays.toString(Arrays.sort(array)));
+		for (int q=0; q<word11.length(); q++) {
+		int max=word11.length();
+		for (int i=q+1; i<max; max-- ) {
+			if (word11.charAt(q)==word11.charAt(max-1)) {
+				word11 = word11.deleteCharAt(max-1);}}}
+		
+
+		System.out.println(word11.length());
+		System.out.println(word11);
+		
+		
+
+		
+		
 		
 		
 		
 		
 		
 	
-	
-	//	String word1 = sc.nextLine();
-	//	String word2 = sc.nextLine();
+
 		sc.close();
 		
 		
