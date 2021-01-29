@@ -1,6 +1,7 @@
 package by.cadememy.Homework2;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Task2 {
@@ -26,23 +27,25 @@ public class Task2 {
 			array[i]=sc.nextLine();
 		}
 		
-		int[] numbs=new int[n];
 		
+		HashMap<Integer, String> lenfthword = new HashMap<>();
+
+		
+
+	     
 		
 		String word1 = ("qre1wtqwerq1ty");
 		System.out.println(word1);
 		StringBuffer word11 = new StringBuffer(word1);
-
-		
 		for (int q=0; q<word11.length(); q++) {
 		int max=word11.length();
 		for (int i=q+1; i<max; max-- ) {
 			if (word11.charAt(q)==word11.charAt(max-1)) {
 				word11 = word11.deleteCharAt(max-1);}}}
+		lenfthword.put(word11.length(), word1);
 		
-
-		System.out.println(word11.length());
-		System.out.println(word11);
+		
+System.out.println(lenfthword);
 		
 		
 
