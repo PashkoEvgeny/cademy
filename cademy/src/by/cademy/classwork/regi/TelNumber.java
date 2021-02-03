@@ -10,7 +10,7 @@ public class TelNumber {
 
 		String text = "+375295673108";
 
-		Pattern pattern = Pattern.compile("[+]{1}\\d+");
+		Pattern pattern = Pattern.compile("[+]{1}(375)+\\d+");
 
 		Matcher matcher = pattern.matcher(text);
 
