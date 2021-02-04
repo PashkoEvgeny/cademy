@@ -6,11 +6,19 @@ public class Task1 {
 
 	public static void main(String[] args) {
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter 2 lines:");
-		String str1 = sc.nextLine();
-		String str2 = sc.nextLine();
-		sc.close();
+		long start = System.nanoTime();
+		
+		
+		
+	//	Scanner sc = new Scanner(System.in);
+	//	System.out.println("Enter 2 lines:");
+	//	String str1 = sc.nextLine();
+	//	String str2 = sc.nextLine();
+	//	sc.close();
+		
+		String str1 = "hello";
+		String str2 = "lohel";
+		
 
 		StringBuffer str11 = new StringBuffer(str1);
 		StringBuffer str22 = new StringBuffer(str2);
@@ -32,5 +40,9 @@ public class Task1 {
 		} else {
 			System.out.println("false");
 		}
+		
+		long finish = System.nanoTime();
+		long timeConsumedMillis = finish - start;
+		System.out.println(timeConsumedMillis);
 	}
 }
