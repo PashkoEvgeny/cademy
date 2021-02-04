@@ -14,8 +14,8 @@ public class Task1 {
 	//	String str2 = sc.nextLine();
 	//	sc.close();
 		
-		String str1 = "hello";
-		String str2 = "lohel";
+		String str1 = "helloooo";
+		String str2 = "lohelooo";
 		
 
 		StringBuffer str11 = new StringBuffer(str1);

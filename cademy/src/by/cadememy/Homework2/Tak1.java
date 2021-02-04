@@ -9,8 +9,8 @@ public class Tak1 {
 		
 		Boolean answer = Boolean.FALSE;
 
-		String str1 = "hello";
-		String str2 = "lohel";
+		String str1 = "helloooo";
+		String str2 = "lohelooo";
 
 		if (str1.length() == str2.length()) {
 			int[] symbol = new int[256];

@@ -1,9 +1,11 @@
 package by.cadememy.Homework3;
 
 
-import java.sql.Date;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Locale;
+import java.util.Date;
+
 import java.util.Scanner;
 
 public class Task4 {
@@ -23,20 +25,28 @@ public class Task4 {
 
 		        //в объект simpleFormat записываем тот формат, который нужен
 		        
-		        SimpleDateFormat simpleFormat = new SimpleDateFormat("MM dd, yyyy");
+		        SimpleDateFormat simpleFormat = new SimpleDateFormat("dd MM yyyy");
 		        
 		        //в объект simpleFormat2 записываем текущий по заданию формат
 		        
-		        SimpleDateFormat simpleFormat2 = new SimpleDateFormat("MM/dd/yyyy");
+		        SimpleDateFormat simpleFormat2 = new SimpleDateFormat("dd/MM/yyyy");
 		        
 		        //В объект data записываем запарсенную строку
 		        
-		        Date date = simpleFormat2.parse(tempDate);
+		        Date date = new Date();
+				try {
+					date = simpleFormat2.parse(tempDate);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		        
 		        //Форматируем строку так, как нужно по заданию
 		        
 		        System.out.println(simpleFormat.format(date).toUpperCase());
-
+		        sc.close();        
+		        
+		        
 		        //Напишите тут ваш код
 		    }
 		}
