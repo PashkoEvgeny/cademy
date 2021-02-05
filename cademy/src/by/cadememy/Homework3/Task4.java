@@ -1,53 +1,53 @@
 package by.cadememy.Homework3;
 
-
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Task4 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		
-		/* Конвертер дат
-		Ввести с клавиатуры дату в формате «08/18/2013»
-		Вывести на экран эту дату в виде «AUG 18, 2013».
-		Воспользоваться объектом Date и SimpleDateFormat.
-		*/
+		Pattern pattern1 = Pattern.compile("((([0-2]\\d)|(30)|(31))\\-((0\\d)|(1[0-2]))\\-((19|20)\\d\\d))");
+		Pattern pattern2 = Pattern.compile("((([0-2]\\d)|(30)|(31))\\/((0\\d)|(1[0-2]))\\/((19|20)\\d\\d))");
 		
-		        
-		        System.out.print("Enter the date: ");
-				Scanner sc = new Scanner(System.in);
-				String tempDate = sc.nextLine();
-
-		        //в объект simpleFormat записываем тот формат, который нужен
-		        
-		        SimpleDateFormat simpleFormat = new SimpleDateFormat("dd MM yyyy");
-		        
-		        //в объект simpleFormat2 записываем текущий по заданию формат
-		        
-		        SimpleDateFormat simpleFormat2 = new SimpleDateFormat("dd/MM/yyyy");
-		        
-		        //В объект data записываем запарсенную строку
-		        
-		        Date date = new Date();
-				try {
-					date = simpleFormat2.parse(tempDate);
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-		        
-		        //Форматируем строку так, как нужно по заданию
-		        
-		        System.out.println(simpleFormat.format(date).toUpperCase());
-		        sc.close();        
-		        
-		        
-		        //Напишите тут ваш код
-		    }
+		
+		
+		
+		SimpleDateFormat df = new SimpleDateFormat("'Day: '<dd> \n'Month: '<MM>' \nYear: '<yyyy>");
+		
+		System.out.print("Enter the date: ");
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		
+		Date date=new Date();
+		
+		Matcher matcher = pattern1.matcher(str);
+		if (matcher.matches()) {
+			SimpleDateFormat df1 = new SimpleDateFormat("dd-MM-yyyy");
+			date = df1.parse(str);
 		}
+		
+		Matcher matcher2 = pattern2.matcher(str);
+		if (matcher2.matches()) {
+			SimpleDateFormat df2 = new SimpleDateFormat("dd/MM/yyyy");
+			date = df2.parse(str);
+		}
+		System.out.println(df.format(date.getTime()));
+		
+		
 
+	//	SimpleDateFormat df = new SimpleDateFormat("'Day: '<dd> \n'Month: '<MM>' \nYear: '<yyyy>");
+	//	SimpleDateFormat df1 = new SimpleDateFormat("dd/MM/yyyy");
+	//	SimpleDateFormat df2 = new SimpleDateFormat("dd-MM-yyyy");
+		
+	//	Date date = df1.parse(str);
+
+	//	System.out.println(df.format(date.getTime()));
+
+		sc.close();
+	}
+}
