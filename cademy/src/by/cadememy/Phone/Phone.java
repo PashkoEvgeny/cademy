@@ -1,13 +1,13 @@
 package by.cadememy.Phone;
 
 public class Phone {
-	int number;
+	String number;
 	String model;
 	int weight;
-	public int getNumber() {
+	public String getNumber() {
 		return number;
 	}
-	public void setNumber(int number) {
+	public void setNumber(String number) {
 		this.number = number;
 	}
 	public String getModel() {
@@ -22,5 +22,26 @@ public class Phone {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
+	
+	public void receiveCall(String name) {
+		System.out.println("call "+name);
+	}
+	
+	Phone(String number, String model, int weight){
+		this.number=number;
+		this.model=model;
+		this.weight=weight;
+		
+	}
+	
+	Phone(String number, String model){
+		
+	}
+	
+	Phone(){
+		
+	}
+	
+	
 
 }
