@@ -28,15 +28,17 @@ public class Phone {
 	}
 	
 	Phone(String number, String model, int weight){
-		this.number=number;
-		this.model=model;
+		this(number, model);
 		this.weight=weight;
 		
 	}
 	
 	Phone(String number, String model){
-		
+		this.model=model;
+		this.number=number;
 	}
+	
+	
 	
 	Phone(){
 		
