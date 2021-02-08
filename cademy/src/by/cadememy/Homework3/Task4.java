@@ -37,6 +37,7 @@ public class Task4 {
 			date = df2.parse(str);
 		}
 		System.out.println(df.format(date.getTime()));
+		System.out.println(date);
 		
 		
 
@@ -49,5 +50,11 @@ public class Task4 {
 	//	System.out.println(df.format(date.getTime()));
 
 		sc.close();
+	}
+
+	@Override
+	public String toString() {
+		return "Task4 [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
 	}
 }
