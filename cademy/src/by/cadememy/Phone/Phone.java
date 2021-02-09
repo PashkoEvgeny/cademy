@@ -30,7 +30,7 @@ public class Phone {
 		this.weight = weight;
 	}
 	
-	public void receiveCall(String name) {
+	protected void receiveCall(String name) {
 		System.out.println("call "+name);
 	}
 	
