@@ -4,6 +4,13 @@ public class Phone {
 	String number;
 	String model;
 	int weight;
+	
+	public void sendMessage(String... numbers) {
+		for (String num: numbers) {
+		System.out.print(num+"   ");
+		}
+	}
+	
 	public String getNumber() {
 		return number;
 	}
@@ -27,10 +34,13 @@ public class Phone {
 		System.out.println("call "+name);
 	}
 	
+	public void receiveCall(String name, String number) {
+		System.out.println("call "+name+ " number "+number);
+	}
+	
 	Phone(String number, String model, int weight){
 		this(number, model);
 		this.weight=weight;
-		
 	}
 	
 	Phone(String number, String model){
@@ -38,12 +48,13 @@ public class Phone {
 		this.number=number;
 	}
 	
-	
-	
-	Phone(){
-		
+	Phone(String model, int weight) {
+		this.model=model;
+		this.weight=weight;
 	}
 	
-	
+	Phone(){
+		super();
+	}
 
 }

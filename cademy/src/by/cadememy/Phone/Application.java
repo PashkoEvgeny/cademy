@@ -26,9 +26,13 @@ public class Application {
 		System.out.println("MODEL:"+phone3.getModel()+ "   NUMBER:" + phone3.getNumber()+"   WEIGHT:" + phone3.weight);
 
 		phone1.receiveCall("Andrey");
+
+		Phone phone4 = new Phone("+375295345345", "samsungA5", 140);
+		phone4.setWeight(160);
+		System.out.println("MODEL:" + phone4.getModel() + "   NUMBER:" + phone4.getNumber() + "   WEIGHT:" + phone4.getWeight());
+		phone2.receiveCall("Gena", "+375293452176");
 		
-		Phone phone4=new Phone("+375295345345", "samsungA5", 140);
-		System.out.println("MODEL:"+phone4.getModel()+ "   NUMBER:" + phone4.getNumber()+"   WEIGHT:" + phone4.getWeight());
+		phone2.sendMessage("4243423423","e345454543534", "5345645545tt545");
 		
 	}
 
