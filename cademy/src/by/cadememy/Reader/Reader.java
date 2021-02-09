@@ -2,9 +2,11 @@ package by.cadememy.Reader;
 
 public class Reader {
 	
-//	: ФИО, номер читательского билета, факультет, дата рождения, телефон. Методы takeBook(), returnBook().
+	//	+++ ФИО, номер читательского билета, факультет, дата рождения, телефон. Методы takeBook(), returnBook().
 	
-	//- takeBook, который будет принимать количество взятых книг. Выводит на консоль сообщение "Петров В. В. взял 3 книги".
+	//++++ takeBook, который будет принимать количество взятых книг. Выводит на консоль сообщение "Петров В. В. взял 3 книги".
+	
+	// - takeBook, который будет принимать переменное количество названий книг. Выводит на консоль сообщение "Петров В. В. взял книги: Приключения, Словарь, Энциклопедия".
 	
 	
 	
@@ -13,6 +15,14 @@ public class Reader {
 	String faculty;
 	String dateBirthday;
 	String numberPhone;
+	
+	Reader(String name, Integer numberReadCard, String faculty, String dateBirthday, String numberPhone) {
+		this.name=name;
+		this.numberReadCard=numberReadCard;
+		this.faculty=faculty;
+		this.dateBirthday=dateBirthday;
+		this.numberPhone=numberPhone;
+	}
 	
 	Reader(){
 		super();
