@@ -3,19 +3,15 @@ package by.cadememy.Deal;
 public class Product {
 
 	String type;
-	Double price;
+	double price;
 	String manufacturer;
-	Integer quantity;
+	int quantity;
 
-	Product(String type, Double price, String manufacturer, Integer quantity) {
+	Product(String type, double price, String manufacturer, int quantity) {
 		this.type = type;
 		this.price = price;
 		this.manufacturer = manufacturer;
 		this.quantity = quantity;
-	}
-
-	Product() {
-		super();
 	}
 
 	public String getType() {
@@ -26,11 +22,11 @@ public class Product {
 		this.type = type;
 	}
 
-	public Double getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
@@ -42,13 +38,16 @@ public class Product {
 		this.manufacturer = manufacturer;
 	}
 
-	public Integer getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(Integer quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
+
+	Product() {
+		super();
+	}
 
 }
