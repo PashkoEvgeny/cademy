@@ -14,6 +14,14 @@ public class Product {
 		this.quantity = quantity;
 	}
 
+	public double discount() {
+		if (quantity > 20) {
+			return 0.9;
+		} else {
+			return 1.0;
+		}
+	}
+
 	public String getType() {
 		return type;
 	}

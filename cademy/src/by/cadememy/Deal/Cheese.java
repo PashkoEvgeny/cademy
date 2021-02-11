@@ -10,6 +10,18 @@ public class Cheese extends Product {
 		this.age = age;
 	}
 
+	@Override
+	public double discount() {
+		if (age > 20) {
+			return 0.8;
+		} else {
+			return 1;
+		}
+	}
+
+	/*
+	 * public Double discount() { if (age > 20) { return 0.8; } return 1.0; }
+	 */
 	Cheese() {
 		super();
 	}

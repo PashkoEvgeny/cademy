@@ -29,6 +29,15 @@ public class Wine extends Product {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+	@Override
+	public double discount() {
+		if (country.equals("Georgia")) {
+			return 0.83;
+		} else {
+			return 1;
+		}
+	}
 	
 	
 	
