@@ -89,7 +89,7 @@ public class Deal {
 				checkSum += d;
 			}
 		}
-		System.out.println("-----------------");
+		System.out.println("-----------------------------");
 		System.out.println("Total price: " + checkSum);
 
 		return checkSum;
