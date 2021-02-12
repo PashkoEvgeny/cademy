@@ -14,6 +14,8 @@ public class Application {
 			deal.addProduct(new Milk("Milk", 1.7, "Prostokvashino", 12, 1.5));
 
 			deal.deal();
+			
+			
 		}
 	}
 		

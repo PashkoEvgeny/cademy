@@ -57,5 +57,21 @@ public abstract class Product {
 	Product() {
 		super();
 	}
+	
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Product [type=");
+		builder.append(type);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(", manufacturer=");
+		builder.append(manufacturer);
+		builder.append(", quantity=");
+		builder.append(quantity);
+		builder.append("]");
+		return builder.toString();
+	}
 
 }
