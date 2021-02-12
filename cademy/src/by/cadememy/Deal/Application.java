@@ -4,6 +4,10 @@ public class Application {
 
 	public static void main(String[] args) {
 		
+		
+		
+		
+		
 			Person seller = new Person("Evgeny", 1000.0 , "+375295673108", "ev.pashko89@gmail.com");
 			Person buyer = new Person("Andrey", 50.0, "+375295042335", "Andrey-email@mail.ru");
 

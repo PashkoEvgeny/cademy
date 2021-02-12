@@ -37,7 +37,7 @@ public class Task4 {
 			date = df2.parse(str);
 		}
 		System.out.println(df.format(date.getTime()));
-		System.out.println(date);
+	//	System.out.println(date);
 		
 		
 
