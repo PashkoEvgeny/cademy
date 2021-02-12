@@ -76,7 +76,9 @@ public class Deal {
 
 		for (Product tmp : products) {
 			if (tmp != null) {
+				
 				double d = tmp.getPrice() * tmp.getQuantity() * tmp.discount();
+				
 
 				if (tmp instanceof Milk) {
 					System.out.print("Milk: ");
@@ -85,6 +87,9 @@ public class Deal {
 				} else if (tmp instanceof Wine) {
 					System.out.print("Wine: ");
 				}
+				
+				d=Math.ceil(d * 100) / 100; // rounding up the invoice
+				
 				System.out.println(tmp.getPrice() + " x " + tmp.getQuantity() + " x " + tmp.discount() + " = " + d);
 				checkSum += d;
 			}

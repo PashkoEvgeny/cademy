@@ -1,11 +1,11 @@
 package by.cadememy.Deal;
 
-public class Product {
+public abstract class Product {
 
-	String type;
-	double price;
-	String manufacturer;
-	int quantity;
+	private String type;
+	private double price;
+	private String manufacturer;
+	private int quantity;
 
 	Product(String type, double price, String manufacturer, int quantity) {
 		this.type = type;
