@@ -2,13 +2,31 @@ package by.cadememy.Deal;
 
 import java.text.ParseException;
 
+
 public class Application {
 
 	public static void main(String[] args) throws ParseException {
 		
-		Person seller = new Person("Evgeny", 1000.0 , "+375295673108", "ev.pashko89@gmail.com");
-		Person buyer = new Person("Andrey", 50.0, "+375295042335", "Andrey-email@mail.ru");
-
+	
+		
+		
+	//	Person seller = new Person("Evgeny", 1000.0 , "+375295673108", "ev.pahko89@gmail.com");
+	//	Person buyer = new Person("Andrey", 50.0, "+375295042335", "Andrey-email@mail.ru");
+		
+		
+		
+		Person seller = new Person();
+		seller.addPerson();
+		
+		Person buyer = new Person();
+		buyer.addPerson();
+	
+		
+		
+		System.out.println(seller.getEmail());
+		System.out.println(buyer.getName());
+	
+	/*	
 		Deal deal = new Deal("21-11-2020", seller, buyer);
 
 		deal.addProduct(new Cheese("Cheese", 25.7, "Itali", 2, 21));
@@ -25,5 +43,8 @@ public class Application {
 		BelarusPhoneValidator q=new BelarusPhoneValidator();  //Task 5, Task 9
 		System.out.println("\n"+q.validate(deal.getBuyer().getPhone()));
 		
+		EmailValidator email1=new EmailValidator();
+		System.out.println(email1.validate(deal.getSeller().email));
+		*/
 	}
 }

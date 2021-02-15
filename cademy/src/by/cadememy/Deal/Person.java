@@ -1,12 +1,16 @@
 package by.cadememy.Deal;
 
+import java.util.Scanner;
+
 public class Person {
 	String name;
 	String phone;
 	String email;
 	Double money;
-
+	public final static Scanner sc = new Scanner(System.in);
+	
 	Person(String name, Double money, String phone, String email) {
+		
 		this.name = name;
 		this.money = money;
 		this.phone = phone;
@@ -16,6 +20,25 @@ public class Person {
 	public String getName() {
 		return name;
 	}
+	
+	
+	
+	public void addPerson() {
+	
+		
+		System.out.println("¬ведите данные Name:");
+		name=sc.nextLine();
+		System.out.println("phone:");
+		phone = sc.nextLine();
+		System.out.println("email:");
+		email =sc.nextLine();
+		System.out.println("money (type double):");
+		money = sc.nextDouble();
+		
+		System.out.println(" Name: "+name+"   money: "+money+"   phone: "+phone+"   email: "+email);
+		
+	}
+
 
 	public void setName(String name) {
 		this.name = name;
@@ -47,6 +70,7 @@ public class Person {
 
 	Person() {
 		super();
+		
 	}
 
 }
