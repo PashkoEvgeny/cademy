@@ -4,13 +4,13 @@ public class Wine extends Product {
 	
 	String color;
 	String country;
-	
+
 	public Wine(String type, double price, String manufacturer, int quantity, String country) {
 		super(type, price, manufacturer, quantity);
 		this.country = country;
 	}
-	
-	Wine(){
+
+	Wine() {
 		super();
 	}
 
@@ -32,13 +32,11 @@ public class Wine extends Product {
 
 	@Override
 	public double discount() {
-		if (country.equals("Georgi")) {
+		if (country.equals("Georgia")) {
 			return 0.83;
 		} else {
 			return 1;
 		}
 	}
-	
-	
 
 }
