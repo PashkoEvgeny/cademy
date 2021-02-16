@@ -1,112 +1,165 @@
 package by.cadememy.Deal;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
-	import java.util.Calendar;
-	import java.util.GregorianCalendar;
+public class Deal {
 
-	public class Deal {
+	public final static int DEFAULT_PRODUCT_SIZE = 2;
 
-		public final static int DEFAULT_PRODUCT_SIZE = 2;
+	private String date;
+	private Person seller;
+	private Person buyer;
+	private Product[] products;
+	private int productCounter;
+	private Double checkSum = 0.0;
 
-		private String date;
-		private Person seller;
-		private Person buyer;
-		private Product[] products;
-		private int productCounter;
+	public Deal() {
+		super();
+	}
 
-		public Deal() {
-			super();
-		}
+	public Double getCheckSum() {
+		return checkSum;
+	}
 
-		public Deal(String date, Person seller, Person buyer) {
-			super();
-			this.date = date;
-			this.seller = seller;
-			this.buyer = buyer;
-		}
+	public void setCheckSum(Double checkSum) {
+		this.checkSum = checkSum;
+	}
 
-		public void deadline() {
-			Calendar calendar = new GregorianCalendar();
-			calendar.add(Calendar.DAY_OF_MONTH, 10);
-			System.out.println("Deadline date: " + calendar.getTime());
-		}
+	public Deal(String date, Person seller, Person buyer) {
+		super();
+		this.date = date;
+		this.seller = seller;
+		this.buyer = buyer;
+	}
 
-		public String getDate() {
-			return date;
-		}
+	public void deadline() {
+		Calendar calendar = new GregorianCalendar();
+		calendar.add(Calendar.DAY_OF_MONTH, 10);
+		System.out.println("Deadline date: " + calendar.getTime());
+	}
 
-		public void setDate(String date) {
-			this.date = date;
-		}
+	public String getDate() {
+		return date;
+	}
 
-		public Person getSeller() {
-			return seller;
-		}
+	public void setDate(String date) {
+		this.date = date;
+	}
 
-		public void setSeller(Person seller) {
-			this.seller = seller;
-		}
+	public Person getSeller() {
+		return seller;
+	}
 
-		public Person getBuyer() {
-			return buyer;
-		}
+	public void setSeller(Person seller) {
+		this.seller = seller;
+	}
 
-		public void setBuyer(Person buyer) {
-			this.buyer = buyer;
-		}
+	public Person getBuyer() {
+		return buyer;
+	}
 
-		public Product[] getProducts() {
-			return products;
-		}
+	public void setBuyer(Person buyer) {
+		this.buyer = buyer;
+	}
 
-		public void setProducts(Product[] products) {
-			this.products = products;
-		}
+	public Product[] getProducts() {
+		return products;
+	}
 
-		public void addProduct(Product product) {
+	public void setProducts(Product[] products) {
+		this.products = products;
+	}
 
-			if (products == null) {
-				products = new Product[DEFAULT_PRODUCT_SIZE];
-			} else {
-				if (productCounter + 1 > products.length) {
-					expandProductArray();
-				}
+	public void addProduct(Product product) {
+
+		if (products == null) {
+			products = new Product[DEFAULT_PRODUCT_SIZE];
+		} else {
+			if (productCounter + 1 > products.length) {
+				expandProductArray();
 			}
-			products[productCounter++] = product;
 		}
+		products[productCounter++] = product;  //	System.out.println("The grocery basket is empty");
+	}
 
-		private void expandProductArray() {
-			Product[] tempArray = new Product[products.length * 2 + 1];
-			System.arraycopy(products, 0, tempArray, 0, products.length);
-			products = tempArray;
+	public void deleteProduct(String type) {
+		if (productCounter == 0) {
+			System.out.println("Product list is empty");
+			return;
 		}
-
-		public Double deal() {
-			Double checkSum = 0.0;
-
-			for (Product tmp : products) {
-				if (tmp != null) {
-
-					double d = tmp.getPrice() * tmp.getQuantity() * tmp.discount();
-
-					if (tmp instanceof Milk) {
-						System.out.print("Milk: ");
-					} else if (tmp instanceof Cheese) {
-						System.out.print("Cheese: ");
-					} else if (tmp instanceof Wine) {
-						System.out.print("Wine: ");
-					}
-
-					d = Math.ceil(d * 100) / 100; // rounding up the invoice
-
-					System.out.println(tmp.getPrice() + " x " + tmp.getQuantity() + " x " + tmp.discount() + " = " + d);
-					checkSum += d;
-				}
+		for (int i = 0; i < productCounter; i++) {
+			if (products[i].getType().equals(type)) {
+				Product temp = products[productCounter - 1];
+				products[productCounter - 1] = products[i];
+				products[i] = temp;
+				productCounter--;
+				break;
 			}
-			System.out.println("----------------------------");
-			System.out.println("Total price: " + checkSum + "\n");
-
-			return checkSum;
-
 		}
 	}
+	
+	public void deleteProduct(int index) {
+
+		if (index > products.length || index < 0) {
+			System.out.println("Index of bound");
+			return;
+		}
+		if (productCounter != index) {
+			System.arraycopy(products, index + 1, products, index, products.length - index - productCounter);
+		}
+		products[productCounter] = null;
+		productCounter--;
+	}
+	
+	private void expandProductArray() {
+		Product[] tempArray = new Product[products.length * 2 + 1];
+		System.arraycopy(products, 0, tempArray, 0, products.length);
+		products = tempArray;
+	}
+
+	public void printProducts() {
+		System.out.println("\nProducts in the grocery basket:\n**********************************");
+		for (int i = 0; i < productCounter; i++) {
+			Product p = products[i];
+			System.out.println("Type: " + p.getType());
+			System.out.println("Manufacturer: " + p.getManufacturer());
+			System.out.println("Quantity: " + p.getQuantity());
+			System.out.println("Price for 1 pc: " + p.getPrice());
+			System.out.println("Total price with discount: " + p.calcTotalPrice());
+			System.out.println("**********************************");
+		}
+	}
+
+	public Double deal() {
+		for (Product prod : products) {
+			if (prod != null) {
+				double d = prod.getPrice() * prod.getQuantity() * prod.discount();
+				d = Math.ceil(d * 100) / 100; // rounding up the invoice
+				checkSum = checkSum + d;
+			}
+		}
+
+		if (getCheckSum() > buyer.getMoney()) {
+			System.out.println("Insufficient money\n");
+		} else {
+			System.out.println("The results of the transaction");
+			System.out.println("Buyer " + buyer.getName() + " money: " + (buyer.getMoney() - checkSum));
+			System.out.println("Seller " + seller.getName() + " money: " + (seller.getMoney() + checkSum));
+		}
+		return checkSum;
+	}
+
+	public void printBill() {
+		for (Product prod : products) {
+			if (prod != null) {
+				double d = prod.getPrice() * prod.getQuantity() * prod.discount();
+				d = Math.ceil(d * 100) / 100; // rounding up the invoice
+				System.out.println(prod.getType()+": " +prod.getPrice() + " x " + prod.getQuantity() + " x " + prod.discount() + " = " + d);
+			}
+		}
+		System.out.println("**********************************");
+		System.out.println("Total price wiht discount: " + Math.ceil(checkSum * 100) / 100 + "\n");
+
+	}
+}

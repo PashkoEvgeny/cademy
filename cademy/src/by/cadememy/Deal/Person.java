@@ -23,7 +23,7 @@ public class Person {
 	
 	
 	
-	public void addPerson() {
+/*	public void addPerson() {
 	
 		
 		System.out.println("¬ведите данные Name:");
@@ -38,7 +38,7 @@ public class Person {
 		System.out.println(" Name: "+name+"   money: "+money+"   phone: "+phone+"   email: "+email);
 		
 	}
-
+*/
 
 	public void setName(String name) {
 		this.name = name;

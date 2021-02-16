@@ -7,44 +7,39 @@ public class Application {
 
 	public static void main(String[] args) throws ParseException {
 		
-	
+		Person seller = new Person("Evgeny", 100.0 , "+375295673108", "ev.pahko89@gmail.com");
+		Person buyer = new Person("Andrey", 650.0, "+375295042335", "Andrey-email@mail.ru");
 		
-		
-	//	Person seller = new Person("Evgeny", 1000.0 , "+375295673108", "ev.pahko89@gmail.com");
-	//	Person buyer = new Person("Andrey", 50.0, "+375295042335", "Andrey-email@mail.ru");
-		
-		
-		
-		Person seller = new Person();
-		seller.addPerson();
-		
-		Person buyer = new Person();
-		buyer.addPerson();
-	
-		
-		
-		System.out.println(seller.getEmail());
-		System.out.println(buyer.getName());
-	
-	/*	
-		Deal deal = new Deal("21-11-2020", seller, buyer);
+		Deal deal = new Deal("16-02-2021", seller, buyer);
 
-		deal.addProduct(new Cheese("Cheese", 25.7, "Itali", 2, 21));
+		deal.addProduct(new Cheese("Cheese", 25.7, "ItalianoCheese", 2, 21));
 		deal.addProduct(new Wine("Wine", 24.5, "Sacebeli", 7, "Georgia"));
 		deal.addProduct(new Milk("Milk", 1.7, "Prostokvashino", 21, 1.5));
+		
+	
 
 		deal.deal();
+	
+		deal.printProducts();
 		
+		deal.deleteProduct("Wine");
+		
+		deal.deal();
+		
+		deal.printProducts();
+	
+		deal.printBill();
+	
 		deal.deadline(); // Task 7
 		
 		RegExpDate red=new RegExpDate();  //Task 3, Task 4
 		red.regExpDate(deal.getDate());
 	
-		BelarusPhoneValidator q=new BelarusPhoneValidator();  //Task 5, Task 9
-		System.out.println("\n"+q.validate(deal.getBuyer().getPhone()));
+		BelarusPhoneValidator phone=new BelarusPhoneValidator();  //Task 5, Task 9
+		System.out.println("\n"+phone.validate(deal.getBuyer().getPhone()));
 		
-		EmailValidator email1=new EmailValidator();
-		System.out.println(email1.validate(deal.getSeller().email));
-		*/
+		EmailValidator email=new EmailValidator();
+		System.out.println(email.validate(deal.getSeller().getEmail())); 
+		
 	}
 }
