@@ -14,6 +14,7 @@ public class Deal {
 	private int productCounter;
 	private Double checkSum = 0.0;
 
+
 	public Deal() {
 		super();
 	}
@@ -130,36 +131,30 @@ public class Deal {
 		}
 	}
 
-	public Double deal() {
-		for (Product prod : products) {
-			if (prod != null) {
-				double d = prod.getPrice() * prod.getQuantity() * prod.discount();
+	public void printBill() { 
+		System.out.println();
+		for (int i = 0; i < productCounter; i++) {
+			Product p = products[i]; 
+			if (p != null) {
+				double d = p.getPrice() * p.getQuantity() * p.discount();
 				d = Math.ceil(d * 100) / 100; // rounding up the invoice
+				System.out.println(p.getType()+": " +p.getPrice() + " x " + p.getQuantity() + " x " + p.discount() + " = " + d);
 				checkSum = checkSum + d;
 			}
 		}
+		System.out.println("**********************************");
+		System.out.println("Total price wiht discount: " + checkSum + "\n");
+		
+	}
+	
+public void deal() {
+		
 		if (getCheckSum() > buyer.getMoney()) {
 			System.out.println("Insufficient money\n");
 		} else {
 			System.out.println("The results of the transaction");
 			System.out.println("Buyer " + buyer.getName() + " money: " + (buyer.getMoney() - checkSum));
-			System.out.println("Seller " + seller.getName() + " money: " + (seller.getMoney() + checkSum));
+			System.out.println("Seller " + seller.getName() + " money: " + (seller.getMoney() + checkSum+"\n"));
 		}
-		return checkSum;
-	}
-
-	public void printBill() { 
-		Double sum=0.0;
-		for (Product prod : products) {
-			if (prod != null) {
-				double d = prod.getPrice() * prod.getQuantity() * prod.discount();
-				d = Math.ceil(d * 100) / 100; // rounding up the invoice
-				System.out.println(prod.getType()+": " +prod.getPrice() + " x " + prod.getQuantity() + " x " + prod.discount() + " = " + d);
-				sum = sum + d;
-			}
-		}
-		System.out.println("**********************************");
-		System.out.println("Total price wiht discount: " + sum + "\n");
-
 	}
 }

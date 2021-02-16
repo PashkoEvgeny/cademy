@@ -15,15 +15,15 @@ public class Application {
 		deal.addProduct(new Wine("Wine", 24.5, "Sacebeli", 7, "Georgia"));
 		deal.addProduct(new Milk("Milk", 1.7, "Prostokvashino", 21, 1.5));
 
+		deal.printProducts();
+		
+		deal.deleteProduct("Wine");
+		
+		deal.printProducts();
+		
 		deal.printBill();
 		
 		deal.deal();
-		
-		deal.printProducts();
-
-		deal.deleteProduct("Wine");
-
-		deal.printProducts();
 
 		deal.deadline(); // Task 7
 
@@ -35,6 +35,5 @@ public class Application {
 
 		EmailValidator email = new EmailValidator();
 		System.out.println("Validate for email: " + email.validate(deal.getSeller().getEmail()));
-
 	}
 }
