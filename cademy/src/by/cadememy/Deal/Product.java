@@ -26,7 +26,7 @@ public abstract class Product {
 
 	public final double calcTotalPrice() {
 		
-		return Math.ceil(((quantity * price * discount()) * 100) / 100);
+		return Math.ceil((quantity * price * discount()) * 100) / 100;
 	}
 
 	public double getPrice() {

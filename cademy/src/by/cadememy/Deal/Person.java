@@ -20,25 +20,6 @@ public class Person {
 	public String getName() {
 		return name;
 	}
-	
-	
-	
-/*	public void addPerson() {
-	
-		
-		System.out.println("¬ведите данные Name:");
-		name=sc.nextLine();
-		System.out.println("phone:");
-		phone = sc.nextLine();
-		System.out.println("email:");
-		email =sc.nextLine();
-		System.out.println("money (type double):");
-		money = sc.nextDouble();
-		
-		System.out.println(" Name: "+name+"   money: "+money+"   phone: "+phone+"   email: "+email);
-		
-	}
-*/
 
 	public void setName(String name) {
 		this.name = name;

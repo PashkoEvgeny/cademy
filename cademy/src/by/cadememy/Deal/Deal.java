@@ -100,7 +100,6 @@ public class Deal {
 	}
 	
 	public void deleteProduct(int index) {
-
 		if (index > products.length || index < 0) {
 			System.out.println("Index of bound");
 			return;
@@ -117,8 +116,8 @@ public class Deal {
 		System.arraycopy(products, 0, tempArray, 0, products.length);
 		products = tempArray;
 	}
-
-	public void printProducts() {
+	
+	public void printProducts() { 
 		System.out.println("\nProducts in the grocery basket:\n**********************************");
 		for (int i = 0; i < productCounter; i++) {
 			Product p = products[i];
@@ -139,7 +138,6 @@ public class Deal {
 				checkSum = checkSum + d;
 			}
 		}
-
 		if (getCheckSum() > buyer.getMoney()) {
 			System.out.println("Insufficient money\n");
 		} else {
@@ -150,16 +148,18 @@ public class Deal {
 		return checkSum;
 	}
 
-	public void printBill() {
+	public void printBill() { 
+		Double sum=0.0;
 		for (Product prod : products) {
 			if (prod != null) {
 				double d = prod.getPrice() * prod.getQuantity() * prod.discount();
 				d = Math.ceil(d * 100) / 100; // rounding up the invoice
 				System.out.println(prod.getType()+": " +prod.getPrice() + " x " + prod.getQuantity() + " x " + prod.discount() + " = " + d);
+				sum = sum + d;
 			}
 		}
 		System.out.println("**********************************");
-		System.out.println("Total price wiht discount: " + Math.ceil(checkSum * 100) / 100 + "\n");
+		System.out.println("Total price wiht discount: " + sum + "\n");
 
 	}
 }
