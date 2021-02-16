@@ -33,12 +33,6 @@ public class Deal {
 		this.buyer = buyer;
 	}
 
-	public void deadline() {
-		Calendar calendar = new GregorianCalendar();
-		calendar.add(Calendar.DAY_OF_MONTH, 10);
-		System.out.println("Deadline date: " + calendar.getTime());
-	}
-
 	public String getDate() {
 		return date;
 	}
@@ -69,6 +63,12 @@ public class Deal {
 
 	public void setProducts(Product[] products) {
 		this.products = products;
+	}
+	
+	public void deadline() {
+		Calendar calendar = new GregorianCalendar();
+		calendar.add(Calendar.DAY_OF_MONTH, 10);
+		System.out.println("Deadline date: " + calendar.getTime());
 	}
 
 	public void addProduct(Product product) {

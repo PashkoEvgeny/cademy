@@ -15,14 +15,12 @@ public class Application {
 		deal.addProduct(new Cheese("Cheese", 25.7, "ItalianoCheese", 2, 21));
 		deal.addProduct(new Wine("Wine", 24.5, "Sacebeli", 7, "Georgia"));
 		deal.addProduct(new Milk("Milk", 1.7, "Prostokvashino", 21, 1.5));
-		
-	
 
 		deal.deal();
 	
 		deal.printProducts();
 		
-		deal.deleteProduct("Wine");
+	//	deal.deleteProduct("Wine");
 		
 		deal.deal();
 		
