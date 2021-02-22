@@ -141,7 +141,7 @@ public class ArrayListTest {
 			}
 		}
 
-		int removeElementValue = 1;
+		int removeElementValue = 5;
 		int removeIndex = 0;
 		for (int i = 0; i <= lastIndex2; i++) {
 			if (arr[i] == removeElementValue) { // нужно будет применить сравнение объектов
