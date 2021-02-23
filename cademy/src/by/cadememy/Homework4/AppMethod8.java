@@ -23,7 +23,7 @@ public class AppMethod8 {
 		ar.addElementByIndex(2,6);
 		System.out.println(ar.toString());
 		
-		System.out.println(ar.getElemenByIndex(6));
+		System.out.println(ar.getElemenByIndex(1));
 		
 		System.out.println(ar.getLastElement());
 		
@@ -37,9 +37,10 @@ public class AppMethod8 {
 		System.out.println(ar.toString());
 		
 		ar.removeElementByValue(3);
+		ar.removeElementByValue(40);
 		System.out.println(ar.toString());
 		
-		
+	
 	}
 
 }

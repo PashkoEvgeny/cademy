@@ -10,8 +10,6 @@ public class Method8 {
 		this.arr = new Integer[3];
 	}
 
-	// метод уменьшени€ массива. нужно дополнить им при удалении элементов
-
 	// метод увеличени€ при необходимости размера массива growArray
 	private void growArray() {
 		if (arr[arr.length - 1] != null) {
@@ -21,8 +19,8 @@ public class Method8 {
 		}
 	}
 
-	// добавлени€ в наш массив объекта типа T - add(T obj)
-	// 1.1 метод добавлени€ в конец и увеличени€ при необходимости размера массива
+	// 1.1 метод добавлени€ элемента в конец и увеличени€ при необходимости размера
+	// массива
 	public void addElementToLast(Integer value) {
 		growArray();
 		for (int i = 0; i <= arr.length; i++) {
@@ -33,7 +31,8 @@ public class Method8 {
 		}
 	}
 
-	// 1.2 метод добавлени€ в начало и увеличени€ при необходимости размера массива
+	// 1.2 метод добавлени€ элемента в начало и увеличени€ при необходимости размера
+	// массива
 	public void addElementToFirst(Integer value) {
 		growArray();
 		for (int i = arr.length - 2; i >= 0; i--) {
@@ -44,11 +43,11 @@ public class Method8 {
 		arr[0] = value;
 	}
 
-	// 1.3 метод добавлени€ по индексу и увеличени€ при необходимости размера
-	// массива
-	// addElementByIndex(int index=4)
+	// 1.3 метод добавлени€ элемента по индексу и увеличени€ при необходимости
+	// размера массива
+
 	// добавить условие: проверка на вхождение индекса. если индекс первышает
-	// значение(размер массива) то ошибка
+
 	public void addElementByIndex(int index, Integer value) {
 		growArray();
 		for (int i = arr.length - 2; i >= index; i--) {
@@ -60,19 +59,14 @@ public class Method8 {
 	}
 
 	// 2 ¬з€тие лемента по индексу
-	// getElemenByIndex(int index)
-	// добавить условие: проверка на вхождение индекса. если индекс первышает
-	// значение(размер массива) то ошибка
 	public Integer getElemenByIndex(int index) {
 		return arr[index];
 	}
 
 	// 3 вз€тие последнего элемента getLastElement()
-
 	public Integer getLastElement() {
 		Integer elemetLast = null;
 		for (int i = arr.length - 1; i >= 0; i--) {
-
 			if (arr[i] != null) {
 				elemetLast = arr[i];
 				break;
@@ -87,17 +81,14 @@ public class Method8 {
 	}
 
 	// 5 вывод размера массива
-	// outputSize()
 	public int size() {
 		return arr.length;
 	}
 
-	// 6 вывод индекса последнего заполненого элемента (не путать с размерностью)
-	// getLastIndex!=null()
+	// 6 вывод индекса последнего заполненого элемента
 	public int getLastFullIndex() {
 		int lastFullIndex = 0;
 		for (int i = arr.length - 1; i >= 0; i--) {
-
 			if (arr[i] != null) {
 				lastFullIndex = i;
 				break;
@@ -105,48 +96,43 @@ public class Method8 {
 		}
 		return lastFullIndex;
 	}
-	
-	
+
 	// 7 удаление элемента по индексу removeElementByIndex(int i)
-			// нужно исрользовать 6 задание lastIndex. проверка на вхождение индекса
-
 	public void removeElementByIndex(int index) {
-		
-
-			for (int i = index; i < getLastFullIndex(); i++) {
-				arr[i] = arr[i + 1];
-
-			}
-			arr[getLastFullIndex()] = null;
+		for (int i = index; i < getLastFullIndex(); i++) {
+			arr[i] = arr[i + 1];
+		}
+		arr[getLastFullIndex()] = null;
 	}
-	
-	
-	
+
 	// 8 удаление элемента по значению removeElementByValue(T obj)
-			// нужно исрользовать 6 задание lastIndex
-			public void removeElementByValue(Integer value) {
-
-			
-			int removeIndex = 0;
-			for (int i = 0; i <= getLastFullIndex(); i++) {
-				if (arr[i] == value) { // нужно будет применить сравнение объектов
-					removeIndex = i;
-					
-					
-					for (int q = removeIndex; q < getLastFullIndex(); q++) {
-						arr[q] = arr[q + 1];
-					}
-					arr[getLastFullIndex()] = null;
-					break;
+	public void removeElementByValue(Integer value) {
+		int removeIndex = 0;
+		for (int i = 0; i <= getLastFullIndex(); i++) {
+			if (arr[i].equals(value)) { // нужно будет применить сравнение объектов
+				removeIndex = i;
+				for (int q = removeIndex; q < getLastFullIndex(); q++) {
+					arr[q] = arr[q + 1];
 				}
+				arr[getLastFullIndex()] = null;
+				break;
 			}
-			}
-
-	
+		}
+	}
 	
 	@Override
 	public String toString() {
 		return "Values on array: " + Arrays.toString(arr);
 	}
 
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
+	
 }
