@@ -68,14 +68,13 @@ public class Method81<T extends Object> {
 		
 		// 2 Взятие элемента по индексу
 		
+		@SuppressWarnings("unchecked")
 		public T getElemenByIndex(int index) {
 			if (index < arr.length) {
 			return arr[index];
 		}
-			else {
-				System.out.print("Index " + index + " out of bounds for array length! Max Index ");
-			}
-			return ;
+			else 
+			return (T) ("Index " + index + " out of bounds for array length! Max Index "+(arr.length-1));
 		}
 
 		// 3 взятие последнего элемента

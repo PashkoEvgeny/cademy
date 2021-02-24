@@ -15,13 +15,12 @@ public class AppMethod81 {
 		box.addElementToLast(cat);
 		System.out.println(box.toString());
 		
-		box.addElementByIndex(2, "String1");
+		box.addElementByIndex(10, "String");
 		System.out.println(box.toString());
 		
-		box.addElementByIndex(7, "String2");
-		System.out.println(box.toString());
 		
-		System.out.println(box.getElemenByIndex(10));
+		
+		System.out.println(box.getElemenByIndex(3));
 	}
 
 }
