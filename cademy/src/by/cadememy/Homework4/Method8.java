@@ -7,7 +7,7 @@ public class Method8 {
 	Integer[] arr;
 
 	Method8() {
-		this.arr = new Integer[3];
+		this.arr = new Integer[2];
 	}
 
 	// метод увеличения при необходимости размера массива growArray
@@ -19,7 +19,7 @@ public class Method8 {
 		}
 	}
 
-	// 1.1 метод добавления элемента в конец и увеличения при необходимости размера
+	// 1.1 метод добавления элемента в первое null место (скорее всего в конец) и увеличения при необходимости размера
 	// массива
 	public void addElementToLast(Integer value) {
 		growArray();
@@ -46,21 +46,28 @@ public class Method8 {
 	// 1.3 метод добавления элемента по индексу и увеличения при необходимости
 	// размера массива
 
-	// добавить условие: проверка на вхождение индекса. если индекс первышает
-
 	public void addElementByIndex(int index, Integer value) {
 		growArray();
-		for (int i = arr.length - 2; i >= index; i--) {
-			if (arr[i] != null) {
-				arr[i + 1] = arr[i];
+		if (index < arr.length) {
+			for (int i = arr.length - 2; i >= index; i--) {
+				if (arr[i] != null) {
+					arr[i + 1] = arr[i];
+				}
 			}
-		}
-		arr[index] = value;
+			arr[index] = value;
+		} else
+			System.out.println("Element is not added! Index " + index + " out of bounds for array length. Max Index " + (arr.length - 1));
 	}
 
 	// 2 Взятие лемента по индексу
 	public Integer getElemenByIndex(int index) {
-		return arr[index];
+		if (index < arr.length) {
+			return arr[index];
+		}
+		else {
+			System.out.print("Index " + index + " out of bounds for array length! Max Index ");
+		}
+		return (arr.length - 1);
 	}
 
 	// 3 взятие последнего элемента getLastElement()
@@ -98,19 +105,27 @@ public class Method8 {
 	}
 
 	// 7 удаление элемента по индексу removeElementByIndex(int i)
+
 	public void removeElementByIndex(int index) {
-		for (int i = index; i < getLastFullIndex(); i++) {
-			arr[i] = arr[i + 1];
-		}
-		arr[getLastFullIndex()] = null;
+		if (index < arr.length) {
+			if (index <= getLastFullIndex()) {
+				for (int i = index; i < getLastFullIndex(); i++) {
+					arr[i] = arr[i + 1];
+				}
+				arr[getLastFullIndex()] = null;
+			} else
+				System.out.println("Value of Index " + index + " = null");
+		} else
+			System.out.println("Index " + index + " out of bounds for array length " + arr.length);
 	}
 
 	// 8 удаление элемента по значению removeElementByValue(T obj)
 	public void removeElementByValue(Integer value) {
 		int removeIndex = 0;
 		for (int i = 0; i <= getLastFullIndex(); i++) {
-			if (arr[i].equals(value)) { // нужно будет применить сравнение объектов
+			while (arr[i].equals(value)) {
 				removeIndex = i;
+				i--;
 				for (int q = removeIndex; q < getLastFullIndex(); q++) {
 					arr[q] = arr[q + 1];
 				}
@@ -119,7 +134,7 @@ public class Method8 {
 			}
 		}
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Values on array: " + Arrays.toString(arr);
@@ -134,5 +149,5 @@ public class Method8 {
 	public boolean equals(Object obj) {
 		return super.equals(obj);
 	}
-	
+
 }

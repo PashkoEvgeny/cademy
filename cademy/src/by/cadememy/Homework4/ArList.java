@@ -8,7 +8,7 @@ public class ArList {
 		
 		ArrayList<String> qwerty=new ArrayList<>();
 		
-		qwerty.add(0, "dgdfgjf");
+		qwerty.add(1, "dgdfgjf");
 		System.out.println(qwerty.size());
 
 	}
