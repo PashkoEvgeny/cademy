@@ -31,7 +31,7 @@ public class AppMethod81 {
 		
 		System.out.println(box.toString());
 		
-		box.removeElementByValue(44);
+		box.removeElementByValue(777l);
 		System.out.println(box.toString());
 	
 	}

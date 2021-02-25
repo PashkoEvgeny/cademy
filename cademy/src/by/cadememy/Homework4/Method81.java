@@ -133,14 +133,15 @@ public class Method81<T extends Object> {
 
 	@Override
 	public String toString() {
-		String s = "Values on array: ";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Values on array: ");
 		for (int i = 0; i <= getLastFullIndex(); i++) {
-			s = s + arr[i];
+			builder.append(arr[i]);
 			if (i < getLastFullIndex()) {
-				s += ", ";
+				builder.append(", ");
 			}
 		}
-		return s;
+		return builder.toString();
 	}
 
 	@Override
