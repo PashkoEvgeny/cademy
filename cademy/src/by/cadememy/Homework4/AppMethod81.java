@@ -9,18 +9,31 @@ public class AppMethod81 {
 		
 		Cat cat=new Cat();
 		
-		box.addElementToFirst('X');
+		box.addElementToLast('X');
 		System.out.println(box.toString());
 		
-		box.addElementToLast(cat);
+		box.addElementToFirst(cat);
 		System.out.println(box.toString());
 		
-		box.addElementByIndex(10, "String");
+		box.addElementByIndex(0, "String");
+		box.addElementByIndex(0, 777l);
 		System.out.println(box.toString());
-		
-		
 		
 		System.out.println(box.getElemenByIndex(3));
+		
+		System.out.println(box.size());
+		
+		System.out.println(box.getLastElement());
+		
+		System.out.println(box.getFirstElement());
+		
+		box.removeElementByIndex(5);
+		
+		System.out.println(box.toString());
+		
+		box.removeElementByValue(44);
+		System.out.println(box.toString());
+	
 	}
-
 }
+
