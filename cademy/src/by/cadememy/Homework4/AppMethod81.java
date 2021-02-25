@@ -16,10 +16,10 @@ public class AppMethod81 {
 		System.out.println(box.toString());
 		
 		box.addElementByIndex(0, "String");
-		box.addElementByIndex(0, 777l);
+		box.addElementByIndex(0, 777);
 		System.out.println(box.toString());
 		
-		System.out.println(box.getElemenByIndex(3));
+		System.out.println(box.getElemenByIndex(2));
 		
 		System.out.println(box.size());
 		
@@ -31,7 +31,7 @@ public class AppMethod81 {
 		
 		System.out.println(box.toString());
 		
-		box.removeElementByValue(777l);
+		box.removeElementByValue(777);
 		System.out.println(box.toString());
 	
 	}
