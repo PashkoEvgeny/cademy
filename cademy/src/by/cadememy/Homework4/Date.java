@@ -15,12 +15,18 @@ public class Date {
 	/* 
 	 * Задание 1.
 	Создать объект класса Date, используя вложенные классы Год, Месяц, День. 
+	
+	
 	Методы: задать дату, вывести на консоль день недели по заданной дате. 
 	День недели представить в виде перечисления. 
-	Рассчитать количество дней, в заданном временном промежутке.
+	
+	
 	Один из конструкторов - строка в формате dd-mm-yyyy, добавить валидацию для этой строки. 
+	
 	После валидации в конструкторе создаем объекты класса Year, Month, Day.
-	Добавить метод, который проверяет высокосный ли год или нет. 
+	
+	
+	 
 
 	if Validate true ->
 	Year  parse (4 dig)
@@ -42,15 +48,7 @@ public class Date {
 		
 	}
 	
-	public static int quantityDay(Date dateNew, Date dateOld) {
-		
 	
-		// ЛОГИКА
-		// data2-data1= quantityDay
-		
-		int quantityDay=;
-		return quantityDay;
-	}
 	
 		//Calendar calendar = new GregorianCalendar(new Date);
 		
