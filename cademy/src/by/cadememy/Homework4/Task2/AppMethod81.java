@@ -1,4 +1,4 @@
-package by.cadememy.Homework4;
+package by.cadememy.Homework4.Task2;
 
 public class AppMethod81 {
 

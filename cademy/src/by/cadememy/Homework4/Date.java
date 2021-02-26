@@ -1,21 +1,74 @@
 package by.cadememy.Homework4;
 
+import java.time.LocalDate;
+
+
+
 public class Date {
 	
+	//LocalDate
 	
-	/*Задание 1.
+	//Calendar calendar = new GregorianCalendar(2017, 0 , 25);
+	
+	private Date date;  //dd-mm-yyyy
+	
+	/* 
+	 * Задание 1.
 	Создать объект класса Date, используя вложенные классы Год, Месяц, День. 
 	Методы: задать дату, вывести на консоль день недели по заданной дате. 
 	День недели представить в виде перечисления. 
 	Рассчитать количество дней, в заданном временном промежутке.
 	Один из конструкторов - строка в формате dd-mm-yyyy, добавить валидацию для этой строки. 
 	После валидации в конструкторе создаем объекты класса Year, Month, Day.
-	Добавить метод, который проверяет высокосный ли год или нет. */
+	Добавить метод, который проверяет высокосный ли год или нет. 
 
 	if Validate true ->
 	Year  parse (4 dig)
 	Month  parse (2 big)
-	Day   parse (2 dig)
+	Day   parse (2 dig)     */
+	
+	
+	public Date getDate() {
+		return date;
+	}
+
+	
+	public void setDate1(Date date) {
+		this.date = date;
+	}
+	
+	public void printDate(Date date) {
+		System.out.println("Day of week=");
+		
+	}
+	
+	public static int quantityDay(Date dateNew, Date dateOld) {
+		
+	
+		// ЛОГИКА
+		// data2-data1= quantityDay
+		
+		int quantityDay=;
+		return quantityDay;
+	}
+	
+		//Calendar calendar = new GregorianCalendar(new Date);
+		
+	
+
+		
+	
+	
+		
+	//int getDayOfYear();         Возвращает номер дня с начала года
+
+		
+	
+	//	calendar.set(Calendar.YEAR, 2017); 			class Year parse date YEAR
+	//	calendar.set(Calendar.MONTH, 0);			class Month parse date MONTH
+	//	calendar.set(Calendar.DAY_OF_MONTH, 25);	class Day parse date DAY_OF_MONTH
+		
+		
 	
 	
 	
