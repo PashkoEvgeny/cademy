@@ -19,7 +19,7 @@ public class AppMethod81 {
 		box.addElementByIndex(0, 777);
 		System.out.println(box.toString());
 		
-		System.out.println(box.getElemenByIndex(2));
+		System.out.println(box.getElemenByIndex(1));
 		
 		System.out.println(box.size());
 		
