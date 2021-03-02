@@ -4,22 +4,23 @@ import java.util.Iterator;
 
 public class IteratorArray<T> implements Iterator<T> {
 
-	private T[][] array;
+	private T[][][] array;
 	private int i = 0;
 	private int q = 0;
+	private int k=0;
 
-	IteratorArray(T[][] array) {
+	IteratorArray(T[][][] array) {
 		super();
 		this.array = array;
 	}
 
 
-	public T[][] getArray() {
+	public T[][][] getArray() {
 		return array;
 	}
 
 
-	public void setArray(T[][] array) {
+	public void setArray(T[][][] array) {
 		this.array = array;
 	}
 
@@ -28,10 +29,6 @@ public class IteratorArray<T> implements Iterator<T> {
 	public boolean hasNext() {
 
 		if (i>=array.length || array == null) {
-			i++;
-			return false;
-		}
-		if (q>=array[i].length || array[i]==null) {
 			return false;
 		}
 		return true;
@@ -39,10 +36,19 @@ public class IteratorArray<T> implements Iterator<T> {
 
 	@Override
 	public T next() {
-		if (i<array.length) {
-			return array[i][q++];
-		}	
-		else return array[i][q];
+		T temp=array[i][q][k++];
+		
+		
+		if (q==array.length) {
+			i++;
+			q=0;
+			if (k==array[i].length) {
+				k++;
+				i=0;
+			}
+		}
+			return temp;
+		
 	}
 
 }
