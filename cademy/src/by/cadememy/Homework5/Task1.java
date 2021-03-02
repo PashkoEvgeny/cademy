@@ -33,8 +33,7 @@ public class Task1 {
 		task1.deleteDuplicate(list);
 
 		System.out.println(list);
-		// выпрартопопато
-		System.out.println(list);
+		//СѓСЂР° СѓСЂР° СѓСЂР°
 
 	}
 }
