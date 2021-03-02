@@ -34,6 +34,7 @@ public class Task1 {
 
 		System.out.println(list);
 		// выпрартопопато
+		System.out.println(list);
 
 	}
 }
