@@ -1,30 +1,19 @@
 package by.cadememy.Homework5;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
-public class Tester {
+class Tester {
 
-	public static void main(String[] args) {
-		
-		ArrayList<Integer> list= new ArrayList<>();
-		
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		list.add(1);
-		System.out.println(list);
-		
-		TreeSet<Integer> list1=new TreeSet<Integer>(list);
-		
-		System.out.println(list1);
-		
-		
-		list=new ArrayList<Integer>(list1);
-		
-		System.out.println(list);
-		
-		
-	}
-
+ 
+    public static void main(String... args) {  
+    	{ 
+    	    int i = 0; 
+    	    while (i < 10) { 
+    	        System.out.println(i); 
+    	        i++; 
+    	    } 
+    	} 
+}
 }
