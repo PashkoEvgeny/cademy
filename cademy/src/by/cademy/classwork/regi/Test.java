@@ -22,7 +22,7 @@ public class Test {
 		Stream<Integer> strem = list.stream();
 		strem.sorted().filter(x -> x > 0).map(x -> x + 10).limit(2).forEach(System.out::println);
 		
-		
+		System.out.println("hi");
 
 	}
 }
