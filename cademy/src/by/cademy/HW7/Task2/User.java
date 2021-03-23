@@ -46,13 +46,20 @@ public class User extends Person{
 	
 	 public void printUserInfo() {
 	        final StringBuilder sb = new StringBuilder("User[");
-	        sb.append("firstName=").append(getFirstName());
-	        sb.append(", lastName=").append(getLastName());
-	        sb.append(", age=").append(getAge());
-	        sb.append(", dateOfBirth=").append(getDateOfBirth());
-	        sb.append(", login=").append(login);
-	        sb.append(", password=").append(password);
-	        sb.append(", email=").append(email);
+	        sb.append("firstName: ");
+	        sb.append(getFirstName());
+	        sb.append(", lastName: ");
+	        sb.append(getLastName());
+	        sb.append(", age: ");
+	        sb.append(getAge());
+	        sb.append(", dateOfBirth: ");
+	        sb.append(getDateOfBirth());
+	        sb.append(", login: ");
+	        sb.append(getLogin());
+	        sb.append(", password: ");
+	        sb.append(getPassword());
+	        sb.append(", email: ");
+	        sb.append(getEmail());
 	        sb.append(']');
 	       System.out.println(sb.toString());
 	    }
