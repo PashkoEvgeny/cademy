@@ -15,6 +15,8 @@ public class TestReflection {
 		
 		 Class<User> userClass = User.class;
 	        Class<? super User> userSuperClass = userClass.getSuperclass();
+	        
+	        System.out.println("\n---------getMethod(\"name\")----------\n");
 
 	        try {
 	            Method userGetLogin = userClass.getMethod("getLogin");
@@ -22,35 +24,40 @@ public class TestReflection {
 	        } catch (NoSuchElementException | NoSuchMethodException e) {
 	            System.err.println(e.getMessage());
 	        }
-	        System.out.println("\n---------getMethod(\"name\")----------\n");
+	        
+	        System.out.println("\n----------getMethods()---------\n");
 
 	        Method[] methodsUser = userClass.getMethods();
 	        for (Method method : methodsUser) {
 	            System.out.println(method.toString());
 	        }
-	        System.out.println("\n-------------------\n");
-
+	        
+	        System.out.println("\n---------getField(\"name\")----------\n");
+	        
 	        try {
 	            Field fieldLogin = userClass.getField("login");
 	            System.out.println(fieldLogin.toString());
 	        } catch (NoSuchFieldException e) {
 	            System.out.println(e.getMessage());
 	        }
-	        System.out.println("-------------------");
-
+	       
+	        System.out.println("\n---------getFields()----------\n");
+	        
 	        Field[] fieldsUser = userClass.getFields();
 	        for (Field field : fieldsUser) {
 	            System.out.println(field.toString());
 	        }
-	        System.out.println("-------------------");
-
+	       
+	        System.out.println("\n---------getDeclaredMethod(\"name\")----------\n");
+	        
 	        try {
 	            Method userGetLogin = userClass.getDeclaredMethod("getLogin");
 	            System.out.println(userGetLogin.toString());
 	        } catch (NoSuchElementException | NoSuchMethodException e) {
 	            System.err.println(e.getMessage());
 	        }
-	        System.out.println("-------------------");
+	        
+	        System.out.println("\n---------getDeclaredMethods()----------\n");
 
 	        Method[] declaredMethodsUser = userClass.getDeclaredMethods();
 	        for (Method method : declaredMethodsUser) {
@@ -60,7 +67,8 @@ public class TestReflection {
 	        for (Method method : declaredMethodsUserSuper) {
 	            System.out.println(method.toString());
 	        }
-	        System.out.println("-------------------");
+	        
+	        System.out.println("\n----------getDeclaredField(\"name\")---------\n");
 
 	        try {
 	            Field fieldLogin = userClass.getDeclaredField("login");
@@ -68,7 +76,8 @@ public class TestReflection {
 	        } catch (NoSuchFieldException e) {
 	            System.out.println(e.getMessage());
 	        }
-	        System.out.println("-------------------");
+	        
+	        System.out.println("\n---------getDeclaredFields()----------\n");
 
 	        Field[] declaredFieldsUser = userClass.getDeclaredFields();
 	        for (Field field : declaredFieldsUser) {
@@ -78,7 +87,8 @@ public class TestReflection {
 	        for (Field field : declaredFieldsUserSuper) {
 	            System.out.println(field.toString());
 	        }
-	        System.out.println("-------------------");
+	        
+	        System.out.println("\n----------User info---------\n");
 
 	        try {
 	            Field[] declaredFieldsUserValue = userClass.getDeclaredFields();
@@ -94,43 +104,43 @@ public class TestReflection {
 	        } catch (IllegalAccessException e) {
 	            e.printStackTrace();
 	        }
-	        System.out.println("-------------------");
+	        
+	        System.out.println("\n----------set new User info---------\n");
 
 	        try {
-	            Field fieldLogin = userClass.getDeclaredField("login");
-	            fieldLogin.setAccessible(true);
-	            fieldLogin.set(user, "alalal");
-
-	            Field fieldPassword = userClass.getDeclaredField("password");
-	            fieldPassword.setAccessible(true);
-	            fieldPassword.set(user, "alalal");
-
-	            Field fieldEmail = userClass.getDeclaredField("email");
-	            fieldEmail.setAccessible(true);
-	            fieldEmail.set(user, "alalal@mail.ru");
-
-	            Field fieldsFirstName = userSuperClass.getDeclaredField("firstName");
+	        	
+	        	Field fieldsFirstName = userSuperClass.getDeclaredField("firstName");
 	            fieldsFirstName.setAccessible(true);
-	            fieldsFirstName.set(user, "alalal");
+	            fieldsFirstName.set(user, "Ivan");
 
 	            Field fieldsLastName = userSuperClass.getDeclaredField("lastName");
 	            fieldsLastName.setAccessible(true);
-	            fieldsLastName.set(user, "alalal");
+	            fieldsLastName.set(user, "Ivanov");
 
 	            Field fieldsLastAge = userSuperClass.getDeclaredField("age");
 	            fieldsLastAge.setAccessible(true);
-	            fieldsLastAge.set(user, 3);
+	            fieldsLastAge.set(user, 0);
 
 	            Field fieldsLastDateOfBirth = userSuperClass.getDeclaredField("dateOfBirth");
 	            fieldsLastDateOfBirth.setAccessible(true);
-	            fieldsLastDateOfBirth.set(user, LocalDate.of(2018, 1, 1));
+	            fieldsLastDateOfBirth.set(user, "00/00/0000");
+	        	
+	            Field fieldLogin = userClass.getDeclaredField("login");
+	            fieldLogin.setAccessible(true);
+	            fieldLogin.set(user, "login");
+
+	            Field fieldPassword = userClass.getDeclaredField("password");
+	            fieldPassword.setAccessible(true);
+	            fieldPassword.set(user, "123");
+
+	            Field fieldEmail = userClass.getDeclaredField("email");
+	            fieldEmail.setAccessible(true);
+	            fieldEmail.set(user, "belposhta");
 
 	        } catch (NoSuchFieldException | IllegalAccessException e) {
 	            System.out.println(e.getMessage());
 	        }
-	        System.out.println("finished set");
-	        System.out.println("-------------------");
-
+	       
 	        try {
 	            Method userPrintUserInfo = userClass.getDeclaredMethod("printUserInfo");
 	            System.out.println(userPrintUserInfo.invoke(user));
